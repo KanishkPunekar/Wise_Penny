@@ -17,4 +17,3 @@ User-Friendly Interface: Intuitive and responsive design for seamless user exper
 ![Screenshot 2024-06-01 164048](https://github.com/KanishkPunekar/Wise_Penny/assets/84027603/9c11b8fb-91f1-4538-9887-d9b3d328ee2e)
 ![Screenshot 2024-06-01 164037](https://github.com/KanishkPunekar/Wise_Penny/assets/84027603/15f02833-153f-4148-b414-7515e7191ec1)
 ![Screenshot 2024-06-01 164114](https://github.com/KanishkPunekar/Wise_Penny/assets/84027603/ab9faee6-63e8-4e32-b053-a238c431a413)
-![Screenshot 2024-06-01 164114](https://github.com/KanishkPunekar/Wise_Penny/assets/84027603/7aad17b7-b72b-4184-86b0-1b0ed618d042)
