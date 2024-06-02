@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>This is about page</title>
+</head>
+<body>
+	<section>
+		<div class="card mr-4 ml-3">
+			<div class="card-body">
+				<h1 class="text-center">Add Products</h1>
+			</div>
+			<div class="container-fluid mt-1">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<form action="#" th:action="@{/user/add_product}" th:object="${product}" enctype="multipart/form-data" method="post" class="mt-2">
+							<!-- product name-->
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-1">
+										<i class="fa fa-plus"></i>								
+									</div>
+								</div>
+								<input required type="text" id="firstname" name="productName" placeholder="Enter product" class="form-control">
+							</div>
+							<!--serial number  -->
+							<div class="input-group mt-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-1">
+										<i class="fa-solid fa-barcode"></i>
+									</div>
+								</div>
+								<input type="text" id="serialno" name="srno" placeholder="Enter serial no" class="form-control">
+							</div>
+							
+							<!-- Price -->
+							<div class="input-group mt-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-1">
+										<i class="fa-solid fa-tag"></i>								
+									</div>
+								</div>
+								<input type="text" id="price" name="price" placeholder="Enter price" class="form-control">
+							</div>
+							<!-- Dealer -->
+							<div class="input-group mt-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-1">
+										<i class="fa fa-user"></i>								
+									</div>
+								</div>
+								<input type="text" id="dealer" name="dealer" placeholder="Enter dealer name" class="form-control">
+							</div>
+							<!-- Description -->
+							<div class="input-group mt-2">
+								<textarea id="mytextarea" placeholder="Enter product description" name="description"  class="form-control" rows="10"></textarea>
+
+							</div>
+							
+							<div class="con text-center">
+								<button class="btn btn-outline-primary">Add Product</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+
+	</section>
+</body>
+</html>

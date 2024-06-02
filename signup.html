@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>This is about page</title>
+</head>
+<body>
+	<section>
+
+		<div class="container">
+		  <div class="overlay" id="overlay">
+		    <div class="sign-in" id="sign-in">
+		      <h1>Welcome Back!</h1>
+		      <p>Please sign in to get started</p>
+		      <button class="switch-button" id="slide-right-button">Sign In</button>
+		    </div>
+		    
+		    <div class="sign-up" id="sign-up">
+		      <h1>Hello, Friend!</h1>
+		      <p>Enter your personal details and start a journey with us</p>
+		      <button class="switch-button" id="slide-left-button">Sign Up</button>
+		    </div>
+		  </div>
+		  
+		  <div class="form">
+		    <div class="sign-in" id="sign-in-info">
+				<div class="error">
+					     <div th:if="${param.error}" class="alert alert-danger">
+				      		Invalid UserName or Password!!
+				      	</div>
+				      	
+				      	<div th:if="${param.logout}" class="alert alert-success">
+				      		You have been logged out
+				      	</div>
+				</div>
+		      <h1>Sign In</h1>	      
+		      <form id="sign-in-form" action="" th:action="@{/dologin}" method="post" >
+	      	
+		      	<div class="from-group" >
+		        		<input 
+		        		type="email"
+		        		name="username"
+		        		id="username"
+		        		placeholder="Email"
+		        		class="form-control"/>
+		        </div>      
+		        <div class="from-group">
+		        		<input 
+		        		type="password" 
+		        		name="password"
+		        		id="password"
+		        		placeholder="Password"
+		        		class="form-control"/>
+		        </div> 		        
+		        <button class="control-button in">Sign In</button>
+		      </form>
+		    </div>
+		    <div class="sign-up" id="sign-up-info">
+				<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert">
+
+					<p th:text="${session.message.content}"></p>
+					
+					<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+			                            
+				</div>
+		      <h1>Create Account</h1>
+		      
+		      <form novalidate id="sign-up-form" action="" th:action="@{/do_register}" method="post" th:object="${user}">
+		        <div class="form-group">
+						<input 
+						type="text" 
+						class="form-control "
+						th:classappend="${#fields.hasErrors('name')?'is-invalid':''}"
+						name="name" 
+						placeholder="Your Name" 
+						required="required" 
+						th:value="${user.name}" />
+						<div  th:each="e : ${#fields.errors('name')}" th:text="${e}" class="invalid-feedback">
+          						
+        				</div>	
+				</div>
+		        <div class="form-group">
+							 <input 
+							 type="email" 
+							 class="form-control"
+							 name="email" 
+							 placeholder="Your Email" 
+							 required="required" 
+							 th:value="${user.email}"/>				
+				</div>
+		        <div class="form-group">
+							 <input 
+							 type="password"
+							 class="form-control" 
+							 name="password" 
+							 placeholder="Your Password" 
+							 required="required" 
+							 th:value="${user.password}"/>
+		        
+		         
+				</div>
+		        <div class="form-group">
+							 		<textarea  
+							 		th:text="${user.about}" 
+							 		name="about" 
+							 		placeholder="Enter something about yourself" 
+							 		rows="4" class="form-control" 
+							 		required="required" ></textarea>	
+				</div>
+		        <div class="from-group">
+		        		<input type="checkbox" name="agreement" />
+		        		<label for="agreement">Accept terms and conditions</label>
+		        </div>
+		        <button class="control-button up">Sign Up</button>
+		      </form>
+		    </div>
+		  </div>
+		</div>
+	</section>
+</body>
+</html>

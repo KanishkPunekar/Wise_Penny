@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+		<div class="card mr-4 ml-3">
+			<div class="card-body">
+				<h1 class="text-center">Sell Product</h1>
+				
+			</div>
+			<div class="container-fluid mt-1">'
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<form action="#" th:action="@{user/sell_product}"  th:object="${Customer}" method="post" class="mt-2">
+							<!-- Customer name -->
+							<div class="input-group mt-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-1">
+											<i class="fa fa-plus"></i>								
+										</div>
+									</div>
+									<input required type="text" id="name" name=" name" placeholder="Enter Customer Name" class="form-control">
+							</div>
+							<!-- Email  -->
+							<div class="input-group mt-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-1">
+											<i class="fa-solid fa-envelopes-bulk"></i>								
+										</div>
+									</div>
+									<input required type="email" id="email" name=" email" placeholder="Enter Customer Email" class="form-control">
+							</div>
+							
+							<!-- pHONE  -->
+							<div class="input-group mt-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-1">
+											<i class="fa fa-phone"></i>								
+										</div>
+									</div>
+									<input required type="text" id="phone" name="phone" placeholder="Enter Customer Contact no." class="form-control">
+							</div>
+							
+							<!-- product name-->
+							<div class="input-group mt-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-1">
+										<i class="fa fa-plus"></i>								
+									</div>
+								</div>
+								<input required type="text" id="name" name="productName" placeholder="Enter product" class="form-control">
+							</div>
+							<!--serial number  -->
+							<div class="input-group mt-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-1">
+										<i class="fa-solid fa-barcode"></i>
+									</div>
+								</div>
+								<input type="text" id="serialno" name="srno" placeholder="Enter serial no" class="form-control">
+							</div>
+							<!-- Price -->
+							<div class="input-group mt-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-1">
+										<i class="fa-solid fa-tag"></i>								
+									</div>
+								</div>
+								<input type="text" id="price" name="price" placeholder="Enter price" class="form-control">
+							</div>
+							
+							<div class="con text-center mt-2">
+								<button class="btn btn-outline-primary">Sell Product</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
